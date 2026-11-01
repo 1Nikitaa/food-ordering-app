@@ -45,4 +45,4 @@ const headerData: HeaderData = {
 }
 
 
-export {headerData }
+export { headerData }

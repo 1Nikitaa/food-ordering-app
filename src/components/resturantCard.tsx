@@ -3,9 +3,6 @@ import type { Restaurant } from "../types/restaurantObjects";
 import {useEffect } from 'react'
 function ResturantCard({ restaurantData }){
 
-    useEffect(()=>{
-console.log(restaurantData,'restaurantData')
-    },[restaurantData])
     return (
             <div className="res-card" key={restaurantData.id}>
             <div className="upper-box">

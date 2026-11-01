@@ -1,4 +1,4 @@
-export interface Resturant {
+export default interface Resturant {
     id: number;
     brand:string;
     name: string;

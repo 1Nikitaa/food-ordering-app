@@ -95,6 +95,20 @@ p {
   margin: 0;
 }
 
+button{
+  width: fit-content;
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: 2px solid white;
+  cursor: pointer;
+  font-weight: 400;
+}
+.button-group{
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap:5px;
+}
 code,
 .counter {
   font-family: var(--mono);
@@ -216,4 +230,9 @@ code {
 .restaurantData-cusines{
   word-break: break-all;
   font-size: 16px;
+}
+.generic-button{
+  background-color: var(--social-bg);
+  color: white;
+  margin-left: 20px;
 }
