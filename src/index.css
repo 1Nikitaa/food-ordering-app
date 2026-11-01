@@ -7,7 +7,7 @@
   --accent: #aa3bff;
   --accent-bg: rgba(170, 59, 255, 0.1);
   --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
+  --social-bg: #ff5200;
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
@@ -108,4 +108,112 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
+}
+.header{
+  background:var(--social-bg);
+  padding: 32px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.header-right{
+  display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    grid-gap: 32px;
+}
+
+.header-image{
+  height: 3rem;
+}
+.res-list{
+  padding: 20px 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.res-title{
+  font-weight: 500;
+  color: var(--social-bg)
+}
+.link-text{
+  text-decoration: none;
+  color: white;
+  font-weight: 400px;
+}
+.button-white{
+  padding: 12px ;
+  border-radius: 12px;
+  border: 1px solid #fff;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 21px;
+  background: transparent;
+}
+.button-black{
+    background: #000;
+    border-radius: 16px;
+    border: none;
+    font-weight: 600;
+    line-height: 21px;
+    display: flex;
+    padding: 12px 20px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
+    margin-top: 0;
+}
+.button-black:hover{
+  background: var(--text);
+}
+.below-box{
+  text-align: left;
+}
+.res-card{
+  max-width: 20%;
+  padding: 16px;;
+  min-width: 20%;
+
+
+}
+.upper-box{
+
+
+}
+.upper-box img{
+  aspect-ratio: 1.5;
+  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.rating{
+  line-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 4px;
+}
+.restaurantData-cusines{
+  word-break: break-all;
+  font-size: 16px;
 }
