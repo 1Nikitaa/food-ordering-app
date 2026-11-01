@@ -5,20 +5,35 @@ import App from './App.tsx'
 import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 import About from './components/about'
 import Error from './components/error'
+import ResturantList from './components/resturantsList'
+import Corporate from './components/corporate'
+import ResturantMenuPage from './components/resturantMenuPage'
 
 
 const appRouter = createBrowserRouter([
   {
     path:'/',
     element:<App/>,
-    errorElement:<Error/>
-
+    errorElement:<Error/>,
+    children:[
+      {
+        path:"/",
+        element:<ResturantList/>
+      },
+      {
+        path:"/about",
+        element:<About/>
+      },
+      {
+        path:"/corporate",
+        element:<Corporate/>
+      },
+      {
+        path:'/resturants/:resId',
+        element:<ResturantMenuPage/>
+      }
+    ]
   },
-  {
-    path:'/about',
-    element:<About/>,
-    errorElement:<Error/>
-  }
 ])
 
 createRoot(document.getElementById('root')!).render(

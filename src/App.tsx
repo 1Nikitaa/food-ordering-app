@@ -4,8 +4,8 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import './App.css'
 import Header from './components/header'
-import ResturantList from './components/resturantsList'
 import ButtonComponent from './components/buttonComponent'
+import {Outlet} from 'react-router-dom'
 
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
   return (
     <>
       <Header />
-      <ResturantList />
+      <Outlet/>
     </>
   )
 }

@@ -1,6 +1,6 @@
 
 const dummyResList = 'https://indiarestros.com/api/v1/restaurants';
-
+const resPageInfo= 'https://indiarestros.com/api/v1/restaurants'
 //https://indiarestros.com/api/docs?utm_source=chatgpt.com API DOC
 
 async function getResList(){
@@ -9,8 +9,7 @@ async function getResList(){
         if(!response.ok){
         throw new Error('Error getting data')
         }
-        console.log('here at api')
-        let data = response.json();
+        let data = await response.json();
         return data;
      
     }
@@ -18,4 +17,19 @@ async function getResList(){
         console.error(error)
     }
 }
-export { getResList }
+async function getResturantPage(id){
+    try{
+        let response = await fetch(`${resPageInfo}/${id}`);
+        if(!response.ok){
+            throw new Error('error getting res data')
+        }
+        let data = await response.json();
+        console.log(data)
+        return data;
+    }
+    catch(error){
+        console.log(error)
+    }
+
+}
+export { getResList ,getResturantPage}

@@ -28,7 +28,6 @@ function ResturantList() {
         setFilteredList(resturantsList)
     }
     const searchTypeTextDebounced=((value)=>{
-        console.log(value,'nobounced')
         let timer;
         return function(value){
             clearTimeout(timer);
@@ -60,7 +59,7 @@ function ResturantList() {
 
     <div className="res-list">{
         filteredList.map((item)=>{
-            return <ResturantCard restaurantData={item} key={item.id}/>
+            return <ResturantCard restaurantData={item} resId={item.id} key={item.id} />
         })
         }
      </div>

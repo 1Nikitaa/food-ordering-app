@@ -1,5 +1,6 @@
 
 import {headerData} from './foodData.jsx';
+import {Link} from 'react-router-dom'
 function Header (){
     return (
         <>
@@ -11,8 +12,8 @@ function Header (){
         <div className="header-right">
         {
           headerData.links.map((item,index)=> {
-            const Element = item.type === 'link' ? "a" : "button";
-            return( <Element key={`${item.linkName}-${index}`} href={item.url} className={`link-text ${item.class}`}>{item.linkName}</Element>)
+     
+            return( <Link key={`${item.linkName}-${index}`} to={item.url} className={`link-text ${item.class}`}>{item.linkName}</Link>)
           })
         }
         </div>

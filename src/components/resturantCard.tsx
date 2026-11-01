@@ -1,10 +1,11 @@
 
 import type { Restaurant } from "../types/restaurantObjects";
 import {useEffect } from 'react'
+import {Link} from 'react-router-dom'
 function ResturantCard({ restaurantData }){
 
     return (
-            <div className="res-card" key={restaurantData.id}>
+    <Link to={`resturants/${restaurantData.id}`} className="res-card" key={restaurantData.id}>
             <div className="upper-box">
                 <img src={restaurantData.photo} ></img>
             </div>
@@ -19,7 +20,7 @@ function ResturantCard({ restaurantData }){
 .join(',')}</div> : ''}
             
             </div>
-        </div> 
+        </Link>
 )
 }
 export default ResturantCard;

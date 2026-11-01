@@ -19,7 +19,7 @@ const headerData: HeaderData = {
     links: [
         {
             linkName: 'Swiggy Corporate',
-            url:'https://www.swiggy.com/corporate/',
+            url:'/corporate',
             type: 'link'
 
         },
