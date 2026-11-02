@@ -1,7 +1,13 @@
-export default function (){
- return (
-    <>
-    <div>I am about us page</div>
-    </>
- )
+import React from 'react'
+
+class aboutClassComponent extends React.Component{
+   constructor(props){
+      super(props)
+      console.log(props)
+   }
+   render(){
+      return (<><div>this is about us classss page</div></>)
+   }
 }
+
+export default aboutClassComponent;

@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
 import {createBrowserRouter, RouterProvider} from 'react-router-dom'
-import About from './components/about'
+import AboutClassComponent from './components/about'
 import Error from './components/error'
 import ResturantList from './components/resturantsList'
 import Corporate from './components/corporate'
@@ -22,7 +22,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path:"/about",
-        element:<About/>
+        element:<AboutClassComponent/>
       },
       {
         path:"/corporate",
