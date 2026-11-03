@@ -2,8 +2,8 @@
 import type { Restaurant } from "../types/restaurantObjects";
 import {useEffect } from 'react'
 import {Link} from 'react-router-dom'
-function ResturantCard({ restaurantData }){
 
+export default function ResturantCard({ restaurantData }){
     return (
     <Link to={`resturants/${restaurantData.id}`} className="res-card" key={restaurantData.id}>
             <div className="upper-box">
@@ -23,4 +23,16 @@ function ResturantCard({ restaurantData }){
         </Link>
 )
 }
-export default ResturantCard;
+
+export const topRatedResCard =()=>{
+    return (props)=>{
+        return (
+        <>
+        <div class="res-card top-rated-card">
+        <span className="top-rated"> Top Rated</span>
+        <ResturantCard {...props}/> </div>
+        
+        </>
+        )
+    }
+}

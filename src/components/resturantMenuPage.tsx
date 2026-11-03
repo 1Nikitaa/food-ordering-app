@@ -1,15 +1,15 @@
 import {getResturantPage} from '../api/resturantApi.js'
-import {useState, useEffect} from 'react'
-import {useParams} from 'react-router-dom'
-import useResturantMenu from '../utils/useResturantMenu'
 
+import {useParams} from 'react-router-dom'
+import useResMenuData from '../utils/useResMenuData'
 export default function(){
-    let {resId}=  useParams();
-    let data = useResturantMenu(resId);
+   let {resId} = useParams();
+   let pageData = useResMenuData(resId);
+   
     return(
         <>
-        <div>{data?.name}</div>
-        <div>{data?.rank}</div>
+        <div>{pageData.name}</div>
+        <div>{pageData.rank}</div>
         </>
     )
 }

@@ -5,6 +5,9 @@ class aboutClassComponent extends React.Component{
       super(props)
       console.log(props)
    }
+   componentDidMount(){
+      console.log('mouted')
+   }
    render(){
       return (<><div>this is about us classss page</div></>)
    }

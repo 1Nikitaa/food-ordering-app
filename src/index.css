@@ -218,13 +218,20 @@ code {
   max-width: 20%;
   padding: 16px;;
   min-width: 20%;
-
-
+  
 }
-.upper-box{
-
-
+.top-rated-card{
+  position: relative;
 }
+.top-rated{
+  position: absolute;
+  top:0;
+  padding: 2px;
+  border-radius: 2px;
+  background-color: #ff5200;
+  color: white;
+}
+
 .upper-box img{
   aspect-ratio: 1.5;
   width: 100%;

@@ -1,5 +1,5 @@
 
-import  ResturantCard  from './resturantCard'
+import  ResturantCard , {topRatedResCard}  from './resturantCard'
 import {useState,useEffect} from 'react'
 import {getResList} from '../api/resturantApi.js'
 import type {Resturant} from '../types/resturantobjects.ts'
@@ -45,6 +45,8 @@ function ResturantList() {
         setFilteredList(searchedLIst)
 
     }
+    const PolishedCard = topRatedResCard(ResturantCard);
+    console.log(PolishedCard);
 
     if(filteredList.length === 0)
     return <h1>Loading...</h1>;
@@ -59,7 +61,7 @@ function ResturantList() {
 
     <div className="res-list">{
         filteredList.map((item)=>{
-            return <ResturantCard restaurantData={item} resId={item.id} key={item.id} />
+              {return item.rating_external?.value > 4 ?  (<PolishedCard restaurantData={item} resId={item.id} key={item.id} />) : (<ResturantCard restaurantData={item} resId={item.id} key={item.id} />)}
         })
         }
      </div>
