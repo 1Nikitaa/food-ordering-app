@@ -40,6 +40,12 @@ const headerData: HeaderData = {
             url:'https://www.swiggy.com/corporate/',
             type: 'button',
             class:"button-black",
+        },
+        {
+            linkName: 'Grocery',
+            url:'/grocery',
+            type: 'button',
+            class:"button-black",
         }
     ],
 }

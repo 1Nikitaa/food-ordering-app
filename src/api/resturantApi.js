@@ -19,12 +19,12 @@ async function getResList(){
 }
 async function getResturantPage(id){
     try{
+        console.log('id',id)
         let response = await fetch(`${resPageInfo}/${id}`);
         if(!response.ok){
             throw new Error('error getting res data')
         }
         let data = await response.json();
-        console.log(data)
         return data;
     }
     catch(error){
