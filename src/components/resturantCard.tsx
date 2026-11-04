@@ -1,10 +1,25 @@
 
 import type { Restaurant } from "../types/restaurantObjects";
-import {useEffect } from 'react'
+import {useEffect,useContext } from 'react'
 import {Link} from 'react-router-dom'
+import {CartDataContext} from '../utils/cartDataContext'
 
 export default function ResturantCard({ restaurantData }){
-    return (
+    let {cartData,setCartData} = useContext(CartDataContext)
+ 
+    console.log(cartData)
+    const sendSetCartDataReq= (item)=>{
+    const updatedItems = [...cartData.items, item];
+       let cartDataVal= {
+        ...cartData,
+        items: updatedItems,
+        quantity:updatedItems.length,
+        totalPrice:updatedItems.reduce((sum,val)=> sum + val.price_band,0)
+        }
+        setCartData(cartDataVal);
+    }
+    return (<>
+    <div class="res-card">
     <Link to={`resturants/${restaurantData.id}`} className="res-card" key={restaurantData.id}>
             <div className="upper-box">
                 <img src={restaurantData.photo} ></img>
@@ -18,9 +33,15 @@ export default function ResturantCard({ restaurantData }){
                 </span>
                 {restaurantData.cuisines? <div className="restaurantData-cusines">{restaurantData.cuisines
 .join(',')}</div> : ''}
-            
+
+
+           
             </div>
+
         </Link>
+         <button onClick={(e)=>{e.stopPropagation();sendSetCartDataReq(restaurantData)}}>Add to cart</button>
+         </div>
+         </>
 )
 }
 

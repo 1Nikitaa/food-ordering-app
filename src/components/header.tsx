@@ -27,7 +27,14 @@ function Header (){
             {userLogindata.isLoggedIn ? <span>Logout</span>: <span>Login</span>}
           </button>
           </Link>
+
+          <Link to="/cart">
+          <button className="button button-black button-white">
+            Cart
+          </button>
+          </Link>
          
+
         
       </div>
         </>

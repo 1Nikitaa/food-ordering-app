@@ -9,6 +9,7 @@ import ResturantList from './components/resturantsList'
 import Corporate from './components/corporate'
 import ResturantMenuPage from './components/resturantMenuPage'
 import LoginPage from './components/LoginPage'
+import Cart from './components/cart'
 
 
 const Grocery = lazy(()=>{return import('./components/grocery')})
@@ -37,6 +38,10 @@ const appRouter = createBrowserRouter([
       {
         path:'/login',
         element:<LoginPage/>
+      },
+      {
+        path:'/cart',
+        element:<Cart/>
       }
     ]
   },
