@@ -46,7 +46,7 @@ const headerData: HeaderData = {
             url:'/grocery',
             type: 'button',
             class:"button-black",
-        }
+        },
     ],
 }
 

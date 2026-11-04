@@ -8,6 +8,8 @@ import Error from './components/error'
 import ResturantList from './components/resturantsList'
 import Corporate from './components/corporate'
 import ResturantMenuPage from './components/resturantMenuPage'
+import LoginPage from './components/LoginPage'
+
 
 const Grocery = lazy(()=>{return import('./components/grocery')})
 const appRouter = createBrowserRouter([
@@ -31,6 +33,10 @@ const appRouter = createBrowserRouter([
       {
         path:'/resturants/:resId',
         element:<ResturantMenuPage/>
+      },
+      {
+        path:'/login',
+        element:<LoginPage/>
       }
     ]
   },

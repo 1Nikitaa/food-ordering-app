@@ -6,14 +6,19 @@ import './App.css'
 import Header from './components/header'
 import ButtonComponent from './components/buttonComponent'
 import {Outlet} from 'react-router-dom'
+import  UserContext from './utils/userContext'
+import {defaultUserContext} from './utils/userContext'
 
 
 function App() {
-
+  const [userLogindata,setUserLogindata] = useState(defaultUserContext)
   return (
     <>
-      <Header />
+    <UserContext.Provider value={{userLogindata,setUserLogindata}}>
+    <Header />
       <Outlet/>
+    </UserContext.Provider>
+    
     </>
   )
 }
