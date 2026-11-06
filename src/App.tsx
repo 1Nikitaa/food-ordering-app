@@ -9,6 +9,8 @@ import {Outlet} from 'react-router-dom'
 import  UserContext from './utils/userContext'
 import {defaultUserContext} from './utils/userContext'
 import {defaultCartItem,CartDataContext} from './utils/cartDataContext'
+import AppStore from './utils/appStore'
+import {Provider} from 'react-redux'
 
 
 function App() {
@@ -17,12 +19,14 @@ function App() {
   console.log(cartData,'tsx')
   return (
     <>
-    <CartDataContext.Provider value={{cartData,setCartData}}>
+    <Provider store={AppStore}>
+    {/* <CartDataContext.Provider value={{cartData,setCartData}}> */}
     <UserContext.Provider value={{userLogindata,setUserLogindata}}>
     <Header />
       <Outlet/>
     </UserContext.Provider>
-    </CartDataContext.Provider>
+   {/* </CartDataContext.Provider> */}
+    </Provider>
     
     </>
   )

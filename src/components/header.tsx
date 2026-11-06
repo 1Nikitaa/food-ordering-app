@@ -3,9 +3,11 @@ import {headerData} from './foodData.jsx';
 import {Link} from 'react-router-dom'
 import userContext from '../utils/userContext'
 import {useContext} from 'react'
+import {useSelector} from 'react-redux'
 
 function Header (){
    let {userLogindata} = useContext(userContext)
+   const cartItems = useSelector((store)=>store.cart.items)
    console.log(userLogindata,'userLogindata')
     return (
         <>
@@ -29,9 +31,9 @@ function Header (){
           </Link>
 
           <Link to="/cart">
-          <button className="button button-black button-white">
-            Cart
-          </button>
+            <button className="button button-black button-white bold">
+              Cart {cartItems.length} Items
+            </button>
           </Link>
          
 

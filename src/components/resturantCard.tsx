@@ -3,11 +3,12 @@ import type { Restaurant } from "../types/restaurantObjects";
 import {useEffect,useContext } from 'react'
 import {Link} from 'react-router-dom'
 import {CartDataContext} from '../utils/cartDataContext'
+import {useDispatch} from 'react-redux'
+import {addItem} from '../utils/slicesUtils/cartSlice'
 
 export default function ResturantCard({ restaurantData }){
     let {cartData,setCartData} = useContext(CartDataContext)
  
-    console.log(cartData)
     const sendSetCartDataReq= (item)=>{
     const updatedItems = [...cartData.items, item];
        let cartDataVal= {
@@ -18,9 +19,15 @@ export default function ResturantCard({ restaurantData }){
         }
         setCartData(cartDataVal);
     }
+    const dispatch = useDispatch();
+
+    const handleCartItem = (item)=>{
+        console.log('redyx adding to cart')
+        dispatch(addItem(item,)) // whatever we send here it will go inside actions.payload
+    }
     return (<>
     <div class="res-card">
-    <Link to={`resturants/${restaurantData.id}`} className="res-card" key={restaurantData.id}>
+    <Link to={`resturants/${restaurantData.id}`}  key={restaurantData.id}>
             <div className="upper-box">
                 <img src={restaurantData.photo} ></img>
             </div>
@@ -38,10 +45,11 @@ export default function ResturantCard({ restaurantData }){
            
             </div>
 
-        </Link>
-         <button onClick={(e)=>{e.stopPropagation();sendSetCartDataReq(restaurantData)}}>Add to cart</button>
-         </div>
-         </>
+            </Link>
+            {/* <button onClick={(e) => { e.stopPropagation(); sendSetCartDataReq(restaurantData) }}>Add to cart</button> */}
+            <button onClick={()=>handleCartItem(restaurantData)}>Add to cart</button>
+        </div>
+    </>
 )
 }
 
@@ -49,10 +57,9 @@ export const topRatedResCard =()=>{
     return (props)=>{
         return (
         <>
-        <div class="res-card top-rated-card">
+        <div class="top-rated-card">
         <span className="top-rated"> Top Rated</span>
         <ResturantCard {...props}/> </div>
-        
         </>
         )
     }
